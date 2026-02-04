@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 5173:5173
+    volumes:
+      - .:/app/phaser-template
+      - /app/phaser-template/node_modules
+    working_dir: /app/phaser-template
+    command: yarn && tail -f /dev/null
