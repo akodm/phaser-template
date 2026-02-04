@@ -3,13 +3,12 @@
   "description": "A Phaser 3 TypeScript template using Vite.",
   "version": "0.0.1",
   "engines": {
-    "node": ">=20.11.0",
-    "yarn": ">=1.22.11",
-    "pnpm": ">=10.28.0"
+    "node": ">=22.11.0",
+    "yarn": ">=1.22.11"
   },
   "scripts": {
     "dev": "vite --config vite/config.dev.mjs",
-    "build": "vite build --config vite/config.prod.mjs",
+    "build": "yarn lint && vite build --config vite/config.prod.mjs",
     "lint": "eslint . --ext .ts,.js --cache --fix"
   },
   "devDependencies": {

@@ -6,11 +6,11 @@ export class Boot extends Scene {
     super({ key: SCENE_KEYS.BOOT });
   }
 
-  init() { }
+  init() {}
 
-  preload() { }
+  preload() {}
 
-  create() { }
+  create() {}
 
-  update() { }
+  update() {}
 }
