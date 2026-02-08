@@ -1,11 +1,17 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import prettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import prettier from 'eslint-plugin-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig(
-  globalIgnores(['**/*.d.ts', 'node_modules', 'dist', '**/*.config.js']),
+  globalIgnores([
+    '*.config.{js,mjs}',
+    '**/*.d.ts',
+    '**/*.txt',
+    'node_modules',
+    'dist',
+  ]),
   eslint.configs.recommended,
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
@@ -31,7 +37,7 @@ export default defineConfig(
       prettier: prettier,
     },
     rules: {
-      'prettier/prettier': 'warn',
+      'prettier/prettier': 'error',
     },
   },
 );
